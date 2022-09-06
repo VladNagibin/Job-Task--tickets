@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import messages from '../../public/messages.png'
 export default function SupportSearch() {
     const [searchText,setSearchText] = useState('')
     const searchHandler = (event:React.ChangeEvent<HTMLInputElement>)=>{
@@ -19,7 +19,7 @@ export default function SupportSearch() {
       </div>
       <div className='main-part'>
         <div className='black-messages'>
-            <img src='messages.png'/>
+            <img src={messages}/>
         </div>
         <h1>Support Forums</h1>
         <div className='text'>Search the topic you need help with in our support forums.</div>

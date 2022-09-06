@@ -2,13 +2,14 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const isDev = process.env.NODE_ENV == 'development'
 
 module.exports = {
+    context:path.resolve(__dirname,'src'),
     mode: process.env.NODE_ENV,
     entry: {
-        main: ['./src/index.tsx']
+        main: ['./index.tsx']
     },
     output: {
         filename: '[name].[hash].js',
@@ -16,7 +17,13 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.tsx','.ts']
+        extensions: ['.tsx','.ts','.js','.jsx']
+    },
+    devServer:{
+        port:3000,
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -47,7 +54,7 @@ module.exports = {
             },
             {
                 test: /\.png$/,
-                use: ['file-loader']
+                type: 'asset/resource'
             },
             {
                 test: /\.ts$/,

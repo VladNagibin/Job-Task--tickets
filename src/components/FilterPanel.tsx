@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import down from '../../public/down.png'
 
 interface FilterPanelProps {
     filters: {
@@ -94,7 +95,7 @@ export default function FilterPanel({ filters, setFilter }: FilterPanelProps) {
             <div className='length'>
                 {chosenFilter.length}
             </div>
-            <img className='down' src='down.png' onClick={openPanel} />
+            <img className='down' src={down} onClick={openPanel} />
         </div>
 
 

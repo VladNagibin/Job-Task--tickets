@@ -3,7 +3,7 @@ import { data } from '../TicketsData'
 import FilterPanel from './FilterPanel'
 import Finder from './Finder'
 import Tickets from './Tickets'
-
+import React from 'react'
 
   
 export default function MyTicketsPanel() {

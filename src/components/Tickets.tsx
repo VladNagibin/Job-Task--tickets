@@ -3,6 +3,10 @@ import { ITicket } from '../interfaces/ITicket'
 //import { data } from '../TicketsData'
 import PageIcon from './PageIcon'
 import Ticket from './Ticket'
+import left from '../../public/left.png'
+import right from '../../public/right.png'
+
+
 
 type Tsort = null| 'inc' | 'dec'
 
@@ -98,10 +102,10 @@ export default function Tickets({ tickets}: TicketsProps) {
         <div className='left-right'>
           {`${onPage * page - onPage + 1} - ${onPage * page < tickets.length ? onPage * page : tickets.length}`} of {tickets.length}
           <div className={`button ${page === 1 ? 'unable' : ''}`} onClick={pageMinus}>
-            <img src='left.png' alt='previous page' />
+            <img src={left} alt='previous page' />
           </div>
           <div className={`button ${page === numOfPages ? 'unable' : ''}`} onClick={pagePlus}>
-            <img src='right.png' alt='next page' />
+            <img src={right} alt='next page' />
           </div>
         </div>
       </div>
