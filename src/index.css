@@ -25,6 +25,16 @@ a {
 .container {
   margin: 0 20% 0 20%;
 }
+@media (max-width: 1400px) {
+  .container {
+    margin: 0 10% 0 10%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    margin: 0 5% 0 5%;
+  }
+}
 
 .dec {
   transform: rotate(180deg);
@@ -51,6 +61,11 @@ a {
   top: -30px;
   right: 160px;
 }
+@media (max-width: 400px) {
+  #search + label:before {
+    right: 35vw;
+  }
+}
 
 #searchT + label:before {
   content: url("../public/search.png");
@@ -58,6 +73,11 @@ a {
   z-index: 3;
   top: 3px;
   right: 255px;
+}
+@media (max-width: 700px) {
+  #searchT + label:before {
+    right: 230px;
+  }
 }
 
 .support-search {
@@ -78,6 +98,11 @@ a {
   display: flex;
   margin-left: 25px;
 }
+@media (max-width: 500px) {
+  .support-search .top-buttons .left-buttons {
+    flex-direction: column;
+  }
+}
 .support-search .top-buttons .left-buttons a {
   margin: 5px;
   font-weight: 700;
@@ -92,6 +117,11 @@ a {
 .support-search .top-buttons .right-buttons {
   display: flex;
   align-items: center;
+}
+@media (max-width: 500px) {
+  .support-search .top-buttons .right-buttons {
+    flex-direction: column-reverse;
+  }
 }
 .support-search .top-buttons .right-buttons .href {
   margin-right: 20px;
@@ -151,10 +181,6 @@ a {
 .support-search .main-part .text {
   font-weight: 400;
   font-size: 15px;
-  line-height: 30%;
-  /* or 5px */
-  display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: 0.26px;
   color: #555555;
@@ -180,6 +206,11 @@ a {
   width: 370px;
   height: 40px;
 }
+@media (max-width: 400px) {
+  .support-search .main-part input {
+    width: 90%;
+  }
+}
 
 .tickets {
   background-color: white;
@@ -191,8 +222,22 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.tickets .top-panel h3 {
-  margin-left: 30px;
+@media (max-width: 700px) {
+  .tickets .top-panel {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 120px;
+  }
+}
+@media (max-width: 440px) {
+  .tickets .top-panel {
+    height: 150px;
+  }
+}
+@media (min-width: 700px) {
+  .tickets .top-panel h3 {
+    margin-left: 30px;
+  }
 }
 .tickets .top-panel .top-right {
   display: flex;
@@ -206,10 +251,19 @@ a {
   letter-spacing: 0.26px;
   color: #000000;
 }
+@media (max-width: 440px) {
+  .tickets .top-panel .top-right {
+    flex-direction: column-reverse;
+  }
+}
 .tickets .top-panel .top-right input {
   width: 240px;
   height: 40px;
-  margin-right: 30px;
+}
+@media (min-width: 700px) {
+  .tickets .top-panel .top-right input {
+    margin-right: 30px;
+  }
 }
 .tickets .top-panel .top-right .dropdown-content {
   flex-direction: column;
@@ -217,8 +271,12 @@ a {
   border: 1px solid #EDEDED;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  margin-top: 120px;
   z-index: 1;
+}
+@media (min-width: 440px) {
+  .tickets .top-panel .top-right .dropdown-content {
+    margin-top: 120px;
+  }
 }
 .tickets .top-panel .top-right .dropdown-content a {
   display: flex;
@@ -242,7 +300,6 @@ a {
   display: flex;
 }
 .tickets .top-panel .top-right .filter {
-  margin-right: 26px;
   display: flex;
   align-items: center;
   font-style: normal;
@@ -251,6 +308,11 @@ a {
   line-height: 30px;
   /* identical to box height, or 231% */
   letter-spacing: 0.26px;
+}
+@media (min-width: 440px) {
+  .tickets .top-panel .top-right .filter {
+    margin-right: 26px;
+  }
 }
 .tickets .top-panel .top-right .filter .length {
   margin-left: 10px;
@@ -298,6 +360,10 @@ a {
   border-top: 1px solid #EDEDED;
   padding-top: 16px;
   padding-bottom: 15px;
+}
+.tickets table .created {
+  min-width: 80px;
+  cursor: pointer;
 }
 .tickets table .ticket {
   width: 35.2380952381%;
@@ -369,6 +435,11 @@ a {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  .tickets table .replies .reply-data {
+    flex-wrap: wrap;
+  }
+}
 .tickets table .replies .avatar {
   width: 25px;
   height: 25px;
@@ -384,6 +455,13 @@ a {
   letter-spacing: 0.26px;
   text-transform: capitalize;
   color: #555555;
+}
+@media (max-width: 1000px) {
+  .tickets table .replies .last-by {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 .tickets table .replies .num-replies {
   width: 28px;
@@ -438,6 +516,7 @@ a {
   display: flex;
 }
 .buttons-panel .pages div {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -472,4 +551,4 @@ a {
 }
 .buttons-panel .left-right .unable {
   background-color: #F9F9F9;
-}/*# sourceMappingURL=index.css.map */
+}

@@ -31,7 +31,14 @@ a {
 
 .container {
     margin: 0 20% 0 20%;
+        @media (max-width:1400px) {
+            margin: 0 10% 0 10%;
+        }
+        @media (max-width:600px) {
+            margin: 0 5% 0 5%;
+        }
 }
+
 .dec{
     transform: rotate(180deg)
 }
@@ -57,6 +64,9 @@ a {
     z-index: 3;
     top: -30px;
     right: 160px;
+    @media (max-width:400px) {
+        right: 35vw;
+    }
 }
 #searchT + label:before {
     content: url('../public/search.png');
@@ -64,6 +74,9 @@ a {
     z-index: 3;
     top: 3px;
     right: 255px;
+    @media (max-width:700px) {
+        right: 230px;
+    }
 }
 
 .support-search {
@@ -83,6 +96,9 @@ a {
 
         .left-buttons {
             display: flex;
+            @media (max-width:500px) {
+                flex-direction: column;
+            }
             margin-left: 25px;
 
             a {
@@ -103,7 +119,9 @@ a {
         .right-buttons {
             display: flex;
             align-items: center;
-
+            @media (max-width:500px) {
+                flex-direction: column-reverse;
+            }
             .href {
                 margin-right: 20px;
                 color: #555555;
@@ -174,11 +192,7 @@ a {
         .text {
             font-weight: 400;
             font-size: 15px;
-            line-height: 30%;
-            /* or 5px */
-
-            display: flex;
-            align-items: center;
+            
             text-align: center;
             letter-spacing: 0.26px;
 
@@ -208,6 +222,9 @@ a {
         input {
             margin-top: 15px;
             width: 370px;
+            @media (max-width:400px) {
+                width: 90%;
+            }
             height: 40px;
 
         }
@@ -224,9 +241,19 @@ a {
         border-bottom: 1px solid #EDEDED;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:700px) {
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 120px;
+        }
+        @media (max-width:440px) {
+            height: 150px;
+        }
 
         h3 {
-            margin-left: 30px;
+            @media (min-width:700px) {
+                margin-left: 30px;    
+            }
         }
 
         .top-right {
@@ -242,11 +269,17 @@ a {
             letter-spacing: 0.26px;
 
             color: #000000;
-
+            @media (max-width:440px) {
+                flex-direction: column-reverse;
+            }
             input {
                 width: 240px;
                 height: 40px;
-                margin-right: 30px;
+                @media (min-width:700px) {
+                    margin-right: 30px;    
+                }
+                
+
             }
 
             .dropdown-content {
@@ -256,7 +289,9 @@ a {
                 box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
                 border-radius: 4px;
                 // position: absolute;
-                margin-top: 120px;
+                @media (min-width:440px) {
+                    margin-top: 120px;                    
+                }
                 z-index: 1;
 
                 a {
@@ -287,7 +322,10 @@ a {
             }
 
             .filter {
-                margin-right: 26px;
+                @media (min-width:440px) {
+                    margin-right: 26px;                    
+                }
+
                 display: flex;
                 align-items: center;
                 font-style: normal;
@@ -346,7 +384,7 @@ a {
             font-size: 10px;
             line-height: 30px;
             /* identical to box height, or 300% */
-
+            
             letter-spacing: 0.26px;
             text-transform: uppercase;
 
@@ -359,9 +397,12 @@ a {
             padding-top: 16px;
             padding-bottom: 15px;
         }
-
+        .created{
+            min-width: 80px;
+            cursor: pointer;
+        }
         .ticket {
-            width: calc(370/1050)*100%;
+            width: 35%;
 
             .title {
                 width: 100%;
@@ -431,11 +472,15 @@ a {
         }
 
         .replies {
-            width: calc(300/1050)*100%;
+            width: 35%;
 
             .reply-data {
                 display: flex;
                 align-items: center;
+                @media (max-width:1000px) {
+                    flex-wrap: wrap;
+                }
+                
             }
 
             .avatar {
@@ -447,6 +492,9 @@ a {
 
             .last-by {
                 width: 145px;
+                @media (max-width:1000px) {
+                    width: fit-content;
+                }
                 font-weight: 400;
                 font-size: 13px;
                 line-height: 30px;
@@ -506,6 +554,7 @@ a {
     margin-bottom: 30px;
 
     .pages {
+
         font-style: normal;
         font-weight: 700;
         font-size: 12px;
@@ -517,6 +566,7 @@ a {
         display: flex;
 
         div {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;

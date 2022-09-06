@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import logo from './logo.svg';
 import Forum from './pages/Forum';
 
 function App() {
